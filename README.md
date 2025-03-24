@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#  Next.js URL Shortener  
 
-## Getting Started
+This is a Next.js project created with `create-next-app`. It allows users to shorten URLs using a simple API and a frontend interface.  
 
-First, run the development server:
+## 🛠 Getting Started  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Steps to Run the Project Locally  
+
+1. Clone the repository:  
+   ```sh
+   git clone https://github.com/adiam22/giva.git
+   cd giva
+   ```
+2. Install dependencies:  
+   ```sh
+   npm install
+   ```  
+3. Start the development server:  
+   ```sh
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.  
+
+You can modify the homepage by editing `app/page.js`. The page will auto-update as you make changes.  
+
+##  Approach  
+
+- Built with **Next.js** for a seamless full-stack experience.  
+- Uses **next/font** for optimized font loading.  
+- Follows best practices for API handling in `app/api/generate/route.js`.  
+- Deployed easily using **Vercel**.  
+
+## 🔗 API Usage  
+
+### 1️ Shorten a URL  
+**Request:**  
+```sh
+POST /api/generate
+Content-Type: application/json
+
+{
+  "url": "https://example.com"
+}
+```
+**Response:**  
+```json
+{
+  "shortUrl": "https://yourapp.com/abc123"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️ Redirect to Original URL  
+Simply visit `https://yourapp.com/abc123`, and it will redirect to `https://example.com`.  
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+##  Deployment  
+The easiest way to deploy is using **Vercel**. Follow the [Next.js Deployment Guide](https://nextjs.org/docs/deployment) for more details.
